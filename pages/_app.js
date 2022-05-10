@@ -1,17 +1,13 @@
-import Navbar from '../components/navbar'
-import '../styles/globals.css'
-import { wrapper } from '../store/store';
+import "../styles/globals.css";
+import store from "../store/store";
+import { Provider } from "react-redux";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
-    
-    <Component {...pageProps} />
-  </>
-  )
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  );
 }
 
-export default wrapper.withRedux(MyApp)
-
-
-
+export default MyApp;

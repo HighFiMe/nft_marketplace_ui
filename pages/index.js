@@ -5,6 +5,7 @@ import Web3Modal from "web3modal";
 import Portis from "@portis/web3";
 import Authereum from "Authereum";
 import { useCallback, useEffect, useReducer, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Navbar from './navbar';
 
 const INFURA_ID = '85db4049c00b4783a425412807ff92e9';
@@ -24,18 +25,19 @@ let accounts = null;
 
 const Home = props =>  {
   const [loading, setLoading] = useState(false);
+  const account = useSelector((state) => state.web3Reducer.account);
 
   async function connectWallet() {
     setLoading(true);
     console.log(providerOptions);
+    console.log('account', account)
+    // const web3Modal = new Web3Modal({
+    //   network: "mainnet", // optional
+    //   cacheProvider: true, // optional
+    //   providerOptions // required
+    // });
 
-    const web3Modal = new Web3Modal({
-      network: "mainnet", // optional
-      cacheProvider: true, // optional
-      providerOptions // required
-    });
-
-    const provider = await web3Modal.connect();
+    // const provider = await web3Modal.connect();
   }
 
   function print(str) {
@@ -61,6 +63,7 @@ const Home = props =>  {
         >
           Connect Wallet
         </button>
+        {account}
       </div>
       <pre id="userWalletAddress"></pre>
       <h3>
