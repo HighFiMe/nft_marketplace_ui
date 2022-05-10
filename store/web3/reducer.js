@@ -21,6 +21,10 @@ export default function web3(state = {}, action) {
       console.log(action);
       return { ...state,  network: action.network }
     }
+    case 'SET_CHAIN_ID': {
+      console.log(action);
+      return { ...state,  network: action.chainId }
+    }
     default:
       return state
   }

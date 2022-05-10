@@ -32,3 +32,10 @@ export function setNetork(network) {
     network
   }
 }
+
+export function setChainId(chainId) {
+  return {
+    type: 'SET_CHAIN_ID',
+    chainId
+  }
+}

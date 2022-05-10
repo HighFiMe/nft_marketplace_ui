@@ -6,7 +6,7 @@ import {
 	web3Loaded,
 } from '../store/web3/action';
 import { useSelector, useDispatch } from 'react-redux';
-import { connectWallet } from '../store/web3/interactions';
+import { connectWallet, subscribeToEvents } from '../store/web3/interactions';
 
 
 function NavLink({to, children}) {
@@ -45,30 +45,21 @@ function MobileNav({open, setOpen}) {
     )
 }
 
-const Navbar = () => {
+const Navbar = (props) => {
 	
 	const dispatch = useDispatch();
 
-	const loadWeb3 = async () => {
-		if (typeof window.ethereum !== 'undefined') {
-			const web3Modal = new Web3Modal({
-				network: "mainnet", // optional
-				cacheProvider: true, // optional
-				providerOptions // required
-			});
-			console.log('hi hi')
-			const provider = await web3Modal.connect();
-			console.log(provider);
-			dispatch(web3Loaded(provider))
+	const setUpWeb3 = async (dispatch) => {
 
-		} else {
-			window.alert('Please install MetaMask');
-			window.location.assign('https://metamask.io/');
-		}
-	};
+		console.log('props',props)
+		const provider = await connectWallet(dispatch);
+		setProvider(provider);
+		await subscribeToEvents(provider);
+	}
 
 	const [open, setOpen] = useState(false);
 	const [loading, setLoading] = useState(false);
+	const [provider, setProvider] = useState(null);
     return (
 	        <nav className="flex filter drop-shadow-md bg-white px-4 py-4 h-20 items-center">
 	            <MobileNav open={open} setOpen={setOpen}/>
@@ -97,15 +88,29 @@ const Navbar = () => {
 				          type="button"
 				          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
 				          type="primary"
-				          onClick={() => connectWallet(dispatch)}
+				          onClick={() => setUpWeb3(dispatch)}
 				        >
 				          Connect Wallet
 				        </button>
+
 	                </div>
 	            </div>
 	        </nav>
 	    );
 }
+
+
+
+export const getServerSideProps = wrapper.getServerSideProps(store => async ({params}) => {
+    const {id} = params;
+    const test = 'test';
+
+    return {
+        props: {
+            id,test
+        },
+    };
+});
 
 export default Navbar
 

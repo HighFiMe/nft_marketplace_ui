@@ -4,7 +4,7 @@ import {
 	setLibrary,
 	setAccounts,
 	setAccount,
-	setNetork,
+	setChainId,
 } from "./action";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import Web3Modal from "web3modal";
@@ -36,9 +36,41 @@ export const connectWallet = async (dispatch) => {
 		dispatch(setLibrary(library));
 		dispatch(setAccounts(accounts));
 		dispatch(setAccount(accounts[0]));
-		dispatch(setNetork(network));
+		dispatch(setChainId(network.chainId));
+
+		return provider;
 	} else {
 		window.alert("Please install MetaMask");
 		window.location.assign("https://metamask.io/");
 	}
 };
+
+const resetState = () => {
+	setAccount();
+	setChainId();
+	setAccounts([]);
+	setProvider(null);
+	setLibrary(null);
+};
+
+const handleDisconnect = async () => {
+	await web3Modal.clearCachedProvider();
+	resetState();
+};
+
+const handleChainChanged = (_hexChainId) => {
+	setChainId(_hexChainId);
+};
+
+const handleAccountsChanged = (accounts) => {
+	console.log("accountsChanged", accounts);
+	if (accounts) setAccount(accounts[0]);
+};
+
+export const subscribeToEvents = async (provider) => {
+	provider.on("accountsChanged", handleAccountsChanged);
+	provider.on("chainChanged", handleChainChanged);
+	provider.on("disconnect", handleDisconnect);
+}
+
+
