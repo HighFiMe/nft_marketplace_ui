@@ -3,7 +3,6 @@ import WalletConnectProvider from "@walletconnect/web3-provider";
 import { useSelector, useDispatch } from "react-redux";
 import { connectWallet } from "../store/slices/web3Slice";
 
-
 function NavLink({ to, children }) {
 	return (
 		<a href={to} className={`mx-4`}>
@@ -60,39 +59,41 @@ const Navbar = (props) => {
 	var provider = useSelector((state) => state.web3Reducer.provider);
 
 	useEffect(() => {
-	    if (provider?.on) {
-	      const handleAccountsChanged = (accounts) => {
-	        // eslint-disable-next-line no-console
-	        console.log('accountsChanged', accounts)
-	        
-	      }
+		if (provider?.on) {
+			const handleAccountsChanged = (accounts) => {
+				// eslint-disable-next-line no-console
+				console.log("accountsChanged", accounts);
+			};
 
-	      // https://docs.ethers.io/v5/concepts/best-practices/#best-practices--network-changes
-	      const handleChainChanged = (_hexChainId) => {
-	        // window.location.reload()
-	        console.log('chain chainged', _hexChainId)
-	      }
+			// https://docs.ethers.io/v5/concepts/best-practices/#best-practices--network-changes
+			const handleChainChanged = (_hexChainId) => {
+				// window.location.reload()
+				console.log("chain chainged", _hexChainId);
+			};
 
-	      const handleDisconnect = (error) => {
-	        // eslint-disable-next-line no-console
-	        console.log('disconnect', error)
-	        // disconnect()
-	      }
+			const handleDisconnect = (error) => {
+				// eslint-disable-next-line no-console
+				console.log("disconnect", error);
+				// disconnect()
+			};
 
-	      provider.on('accountsChanged', handleAccountsChanged)
-	      provider.on('chainChanged', handleChainChanged)
-	      provider.on('disconnect', handleDisconnect)
+			provider.on("accountsChanged", handleAccountsChanged);
+			provider.on("chainChanged", handleChainChanged);
+			provider.on("disconnect", handleDisconnect);
 
-	      // Subscription Cleanup
-	      return () => {
-	        if (provider.removeListener) {
-	          provider.removeListener('accountsChanged', handleAccountsChanged)
-	          provider.removeListener('chainChanged', handleChainChanged)
-	          provider.removeListener('disconnect', handleDisconnect)
-	        }
-	      }
-    }
-  }, [provider])
+			// Subscription Cleanup
+			return () => {
+				if (provider.removeListener) {
+					provider.removeListener(
+						"accountsChanged",
+						handleAccountsChanged
+					);
+					provider.removeListener("chainChanged", handleChainChanged);
+					provider.removeListener("disconnect", handleDisconnect);
+				}
+			};
+		}
+	}, [provider]);
 
 	const [open, setOpen] = useState(false);
 	const [loading, setLoading] = useState(false);
@@ -133,7 +134,7 @@ const Navbar = (props) => {
 					<NavLink to="/contact">CONTACT</NavLink>
 					<NavLink to="/about">ABOUT</NavLink>
 
-					{(account == null || account == "") ? (
+					{account == null || account == "" ? (
 						<button
 							type="button"
 							className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
