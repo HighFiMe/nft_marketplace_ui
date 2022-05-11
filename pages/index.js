@@ -25,20 +25,7 @@ let accounts = null;
 
 const Home = props =>  {
   const [loading, setLoading] = useState(false);
-  const account = useSelector((state) => state.web3Reducer.account);
-
-  async function connectWallet() {
-    setLoading(true);
-    console.log(providerOptions);
-    console.log('account', account)
-    // const web3Modal = new Web3Modal({
-    //   network: "mainnet", // optional
-    //   cacheProvider: true, // optional
-    //   providerOptions // required
-    // });
-
-    // const provider = await web3Modal.connect();
-  }
+  
 
   function print(str) {
     const p = document.createElement("p");
@@ -63,7 +50,6 @@ const Home = props =>  {
         >
           Connect Wallet
         </button>
-        {account}
       </div>
       <pre id="userWalletAddress"></pre>
       <h3>
