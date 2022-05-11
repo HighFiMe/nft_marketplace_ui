@@ -1,7 +1,13 @@
 import { useState, useEffect } from "react";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import { useSelector, useDispatch } from "react-redux";
-import { connectWallet } from "../store/slices/web3Slice";
+import {
+	connectWallet,
+	setChain,
+	setAccount,
+	disconnectWallet,
+	connectWalletIfPrevConnected,
+} from "../store/slices/web3Slice";
 
 function NavLink({ to, children }) {
 	return (
@@ -55,31 +61,34 @@ function MobileNav({ open, setOpen }) {
 
 const Navbar = (props) => {
 	const dispatch = useDispatch();
+	const [checkWallet, setCheckWallet] = useState(false);
+
 	var account = useSelector((state) => state.web3Reducer.account);
 	var provider = useSelector((state) => state.web3Reducer.provider);
 
 	useEffect(() => {
 		if (provider?.on) {
-			const handleAccountsChanged = (accounts) => {
-				// eslint-disable-next-line no-console
+			const handleAccountsChanged = async (accounts) => {
 				console.log("accountsChanged", accounts);
+				if (accounts.length == 0) {
+					await dispatch(disconnectWallet());
+				} else {
+					dispatch(setAccount(accounts[0]));
+				}
 			};
 
 			// https://docs.ethers.io/v5/concepts/best-practices/#best-practices--network-changes
 			const handleChainChanged = (_hexChainId) => {
-				// window.location.reload()
+				// TODO: Best practice is to reload , need to figure out how to do that while still maintaining state.
+				// window.location.reload();
 				console.log("chain chainged", _hexChainId);
-			};
-
-			const handleDisconnect = (error) => {
-				// eslint-disable-next-line no-console
-				console.log("disconnect", error);
-				// disconnect()
+				dispatch(setChain(_hexChainId));
 			};
 
 			provider.on("accountsChanged", handleAccountsChanged);
 			provider.on("chainChanged", handleChainChanged);
-			provider.on("disconnect", handleDisconnect);
+			// Chain change also emits disconnect event. Handling disconnect via accountsChanged call.
+			// provider.on("disconnect", handleDisconnect);
 
 			// Subscription Cleanup
 			return () => {
@@ -89,11 +98,18 @@ const Navbar = (props) => {
 						handleAccountsChanged
 					);
 					provider.removeListener("chainChanged", handleChainChanged);
-					provider.removeListener("disconnect", handleDisconnect);
+					// provider.removeListener("disconnect", handleDisconnect);
 				}
 			};
 		}
 	}, [provider]);
+
+	useEffect(() => {
+		if(!checkWallet) {
+			dispatch(connectWalletIfPrevConnected());
+			setCheckWallet(true);
+		}
+	})
 
 	const [open, setOpen] = useState(false);
 	const [loading, setLoading] = useState(false);
