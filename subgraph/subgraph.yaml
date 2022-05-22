@@ -1,0 +1,47 @@
+specVersion: 0.0.2
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: RentingProt
+    network: rinkeby
+    source:
+      address: "0xFF9c8D956b01B8FC43e3718a83b9fD9546C18906"
+      abi: RentingProt
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - ApprovalForAll
+        - Deposited
+        - Transfer
+        - Withdraw
+        - NewPlayerManager
+        - NewPlayer
+        - SplitChanged
+        - RewardsTransfered
+      abis:
+        - name: RentingProt
+          file: ./abis/RentingProt.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,indexed uint256)
+          handler: handleApproval
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: Deposited(address,address,uint256,uint256,bytes)
+          handler: handleDeposited
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+        - event: Withdraw(address,address,uint256,uint256)
+          handler: handleWithdraw
+        - event: NewPlayerManager(uint256,address)
+          handler: handleNewPlayerManager
+        - event: NewPlayer(uint256,address)
+          handler: handleNewPlayer
+        - event: SplitChanged(uint256,uint256)
+          handler: handleChangeOfSplit
+        - event: RewardsTransfered(address,address,uint256,uint256,address)
+          handler: handleRewardsTransfer
+      file: ./src/mapping.ts
