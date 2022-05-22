@@ -1,3 +1,26 @@
+## Introduction
+
+Metaleap, the next gen renting & lending marketplace for NFT's.
+
+This project is broken down into two parts. The UI and the smartcontract associated with it. 
+
+The UI designs can be found here - https://www.figma.com/proto/l4y1NlYBW8wetepzJPbx9N/hackathon?node-id=320%3A6316&scaling=min-zoom&page-id=22%3A81&starting-point-node-id=300%3A6592 
+
+and the smart contracts are present in the contracts layer. 
+
+The smart contracts here are capabe of staking erc721 NFT's and giving out a wrapped NFT's that can then be rented out for a short duration. 
+
+The wrapped NFT's are designed in such a way we have two fields , 
+- the owner 
+- the user 
+
+This allows the owner to have the ownership of the NFT , while also giving away the usage access to another person. 
+
+The contract also has split functionality that can be used to do rewards split from the game directly. 
+
+
+
+## NEXT JS PROJECT
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
