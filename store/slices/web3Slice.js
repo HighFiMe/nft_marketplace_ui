@@ -26,6 +26,7 @@ const initialState = {
 export const connectWallet = createAsyncThunk(
 	"web3Wallet/connectWallet",
 	async (args, thunkAPI) => {
+		
 		const web3Modal = new Web3Modal({
 			network: "mainnet", // optional
 			cacheProvider: true, // optional
@@ -44,6 +45,7 @@ export const connectWallet = createAsyncThunk(
 export const connectWalletIfPrevConnected = createAsyncThunk(
 	"web3Wallet/connectWalletIfPrevConnected",
 	async (args, thunkAPI) => {
+		
 		const web3Modal = new Web3Modal({
 			network: "mainnet", // optional
 			cacheProvider: true, // optional
