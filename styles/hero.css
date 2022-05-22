@@ -1,0 +1,499 @@
+.border-hero {
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-grey5) !important;
+}
+.btn-add-watchlist {
+  border: 1px solid var(--color-green);
+  border-radius: 400px;
+  height: 36px;
+  width: 164px;
+  font-size: var(--font-sm);
+  font-weight: 400;
+}
+.mx-w-hero-para {
+  max-width: 553px;
+}
+
+/* COLLECTIONS CARD STYLE  */
+.weth-card {
+  max-width: 331px;
+  width: 100%;
+  background-color: var(--color-grey-6);
+  border: 2px solid var(--color-grey5);
+  border-radius: 14px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.weth-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 4px 4px 5px var(--color-grey5);
+}
+
+/* SEARCH BOX STYLE  */
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-grey5);
+  border-radius: 100px;
+  height: 44px;
+  padding: 0px 0px 0px 22px;
+}
+.search-box input {
+  border: 0px;
+  background-color: transparent;
+  outline: 0;
+  width: 100%;
+  color: #d8dbdf;
+}
+.search-box input::placeholder {
+  color: var(--color-white);
+  font-weight: 400;
+  font-size: var(--font-md);
+}
+.btn-filter {
+  height: 44px;
+  width: 94px;
+  border: 1px solid var(--color-green);
+  border-radius: 400px;
+  font-weight: 400;
+  font-size: 16px;
+}
+.most-view-dropdown {
+  width: 371px;
+}
+
+.most-view-dropdown select {
+  height: 44px;
+  border-radius: 400px;
+  border: 1px solid var(--color-grey5);
+  font-weight: 400;
+  font-size: var(--font-md);
+}
+.most-view-select-wrapper {
+  width: 307px;
+}
+.most-view-select-wrapper .css-1s2u09g-control {
+  height: 44px;
+  border-radius: 400px;
+  border: 1px solid var(--color-grey5) !important;
+  font-weight: 400;
+  font-size: var(--font-md);
+  background-color: transparent !important;
+  box-shadow: unset !important;
+}
+.most-view-select-wrapper .css-1pahdxg-control {
+  height: 44px;
+  border-radius: 400px;
+  border: 1px solid var(--color-grey5) !important;
+  font-weight: 400;
+  font-size: var(--font-md);
+  background-color: transparent !important;
+  box-shadow: unset !important;
+}
+.most-view-select-wrapper .css-26l3qy-menu {
+  background-color: var(--color-grey-6);
+}
+
+.most-view-select-wrapper .css-1okebmr-indicatorSeparator {
+  opacity: 0;
+}
+.most-view-select-wrapper .css-319lph-ValueContainer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.most-view-select-wrapper .css-qc6sy-singleValue {
+  color: #d8dbdf;
+}
+.most-view-select-wrapper .css-9gakcf-option {
+  background-color: var(--color-green);
+}
+
+.most-view-select-wrapper .css-yt9ioa-option {
+  color: white !important;
+}
+.most-view-select-wrapper .css-1n7v3ny-option:hover {
+  background-color: #afb7bf;
+}
+.w-64 {
+  width: 64%;
+}
+
+@media (max-width: 576.98px) {
+  .weth-card {
+    max-width: 100%;
+  }
+  .most-view-dropdown {
+    width: 100%;
+  }
+  .most-view-select-wrapper {
+    width: 100%;
+  }
+}
+/*  carsouel css here */
+
+.carousel-indicators {
+  display: none !important;
+}
+.carousel-control-next,
+.carousel-control-prev {
+  right: 50% !important;
+  top: unset !important;
+  bottom: 24px !important;
+  background-color: #000000 !important;
+  width: 36px !important;
+  height: 36px;
+  border-radius: 50% !important;
+}
+.carousel-control-prev {
+  left: 34% !important;
+  top: unset !important;
+
+  bottom: 24px !important;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  width: 16px !important;
+}
+
+.carousel-caption {
+  bottom: 120px !important;
+  left: 23% !important;
+}
+
+/* HERO SLIDER STYLE  */
+
+.hero-slider-item .hero-img-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 132px;
+  width: 232px;
+  background-color: rgba(43, 55, 69, 0.75);
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slick-prev {
+  right: 42% !important;
+  left: unset !important;
+  top: 90% !important;
+  background-color: #606c7c !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background-image: url("/images/right-arrow.svg") !important;
+  background-size: 15px 15px !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  z-index: 10 !important;
+}
+
+.slick-next {
+  right: unset !important;
+  left: 42% !important;
+  top: 90% !important;
+  background-color: #606c7c !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background-image: url("/images/left-arrow.svg") !important;
+  background-size: 15px 15px !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  z-index: 10 !important;
+}
+
+.slick-next::before {
+  font-family: unset !important;
+  content: "" !important;
+}
+.slick-prev::before {
+  font-family: unset !important;
+  content: "" !important;
+}
+@media (min-width: 992px) and (max-width: 1300.98px) {
+  .carousel-control-next,
+  .carousel-control-prev {
+    right: 47% !important;
+  }
+}
+@media (min-width: 480px) and (max-width: 575.98px) {
+  .carousel-caption {
+    left: 32% !important;
+  }
+}
+@media (min-width: 420px) and (max-width: 479.98px) {
+  .carousel-caption {
+    left: 25% !important;
+    bottom: 110px;
+  }
+}
+@media (min-width: 375px) and (max-width: 419.98px) {
+  .carousel-caption {
+    left: 23% !important;
+    bottom: 80px !important;
+  }
+}
+@media (max-width: 576.98px) {
+  .hero-img-card {
+    width: 180px;
+    height: 120px;
+  }
+}
+/* nft css here  */
+
+.card-collection {
+  border: 0.99px solid var(--color-grey5);
+  border-radius: 16px;
+  max-width: 405px;
+}
+.view-collection-hover:hover {
+  color: var(--color-green) !important;
+  text-decoration: none !important;
+  opacity: 0.75;
+}
+
+.view-collection-hover:hover svg {
+  transform: translateX(-5px) !important;
+  display: inline-block !important;
+}
+
+.transition-03s-Ease {
+  transition: 0.3s ease;
+}
+.chose-rent {
+  max-width: 529px;
+  height: 44px;
+  padding: 0px 12px;
+  border: 1px solid var(--color-grey);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+}
+.chose-rent input {
+  width: 100%;
+  background-color: unset;
+  border: unset;
+  color: var(--color-white);
+}
+
+.chose-rent input::placeholder {
+  color: var(--color-grey-3);
+  font-weight: 400;
+  font-size: var(--font-md);
+}
+
+.days-section {
+  background-color: var(--color-green);
+  padding: 4px 6px;
+  border-radius: 40px;
+  margin-right: 8px;
+  border: 2px solid var(--color-green);
+  cursor: pointer;
+}
+
+.days-section:hover {
+  background-color: transparent;
+  color: var(--color-green);
+}
+.days-section:hover p {
+  color: var(--color-green);
+}
+
+.days-section p {
+  color: var(--color-white);
+  font-size: var(--font-xs);
+  font-weight: 700;
+  padding: 2.5px 8px;
+}
+.mx-w-529 {
+  max-width: 529px;
+}
+.nft-border-2 {
+  border: 2px solid var(--color-grey5);
+}
+
+.grey-border-2 {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-grey5);
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  border: 2px solid var(--color-green);
+  border-radius: 2px;
+}
+.input-check {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.input-check input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+/* On mouse-over, add a grey background color */
+.input-check :hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.input-check input:checked ~ .checkmark {
+  background-color: unset;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.input-check input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.input-check .checkmark:after {
+  left: 4.5px;
+  top: 2px;
+  width: 5px;
+  height: 8px;
+  border: solid var(--color-green);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.btn-rent {
+  padding: 9.5px 20px;
+  background-color: var(--color-green);
+  border-radius: 400px;
+  border: unset;
+  color: var(--color-white);
+  font-size: var(--font-md);
+  font-weight: 700;
+  border: 1px solid var(--color-green);
+}
+.btn-rent:hover {
+  background-color: transparent;
+  color: var(--color-green);
+}
+
+.btn-rent:hover svg path {
+  fill: var(--color-green);
+}
+.properties-accordion {
+  background-color: var(--color-grey-7);
+  padding: 16px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+  border: 1px solid var(--color-grey5);
+  border-radius: 16px;
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+
+.properties-accordion:hover {
+  transform: translateY(-10px);
+  box-shadow: 4px 5px 5px var(--color-grey5);
+}
+/* according css here */
+.accordion-button {
+  background-color: transparent !important;
+  color: var(--color-primary-green) !important;
+}
+.accordion-body {
+  background-color: transparent !important;
+}
+.accordion-item {
+  background-color: transparent !important;
+  color: var(--color-primary-green);
+  border-radius: unset !important;
+  border: unset !important;
+  border-top: 1px solid var(--color-grey5) !important ;
+}
+.accordion-button::after {
+  background-image: url("/images/array.png") !important;
+}
+.accordion-button:not(.collapsed) {
+  box-shadow: unset !important;
+}
+.accordion-button:focus {
+  box-shadow: unset !important;
+}
+.similar-section {
+  border-radius: 16px;
+  width: 100%;
+  background-color: var(--color-grey-6);
+  border: 1px solid var(--color-grey5);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.similar-section:hover {
+  transform: translateY(-10px);
+  box-shadow: 4px 5px 5px var(--color-grey5);
+}
+.para-similar {
+  max-width: 350px;
+}
+.similar-section .axie {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+.description-para {
+  max-width: 800px;
+}
+.similar-nft-card {
+  max-width: 188px;
+  background-color: var(--color-grey-6);
+  border: 1px solid var(--color-grey5);
+  border-radius: 16px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.similar-nft-card img {
+  transition: 0.3s ease;
+}
+
+.similar-nft-card:hover img {
+  transform: scale(1.1);
+}
+
+.similar-nft-card:hover {
+  box-shadow: 7px 8px 10px var(--color-grey-6);
+}
+@media (max-width: 576.98px) {
+  .slick-prev {
+    right: 35% !important;
+  }
+
+  .slick-next {
+    left: 35% !important;
+  }
+}

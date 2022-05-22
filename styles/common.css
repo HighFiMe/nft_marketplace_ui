@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+body {
+  font-family: "Inter", sans-serif !important;
+  background-color: #1d2630 !important;
+}
+
+@font-face {
+  font-family: MessapiaBold;
+  src: url("/fonts/Messapia-Bold.otf");
+}
+
+:root {
+  /* font size root file  here  */
+  --font-xs: 12px;
+  --font-sm: 14px;
+  --font-md: 16px;
+  --font-xl: 18px;
+  --font-xl1: 20px;
+  --font-xl2: 22px;
+  --font-xl3: 24px;
+  --font-xl4: 26px;
+  --font-xl5: 28px;
+  --font-xl6: 30px;
+  --font-xl7: 32px;
+  --font-xl8: 48px;
+
+  /* color root file here  */
+  --color-primary-green: #55e674;
+  --color-green: #43b45c;
+  --color-light-green: #b4ddc1;
+  --color-white: #ffffff;
+  --color-grey: #87929d;
+  --color-grey-2: #d8dbdf;
+  --color-grey-3: #606c7c;
+  --color-grey-4: #afb7bf;
+  --color-grey5: #38495c;
+  --color-grey-6: #2b3745;
+  --color-grey-7: #1d2630;
+  --color-primary-grey: #ebedee;
+  --color-organ: #d65644;
+  --color-primary-organ: #ebbab3;
+}
+
+@media (max-width: 576.98px) {
+  :root {
+    --font-xs: 8px;
+    --font-sm: 12px;
+    --font-md: 14px;
+    --font-xl: 16px;
+    --font-xl1: 16px;
+    --font-xl2: 18px;
+    --font-xl3: 20px;
+    --font-xl4: 22px;
+    --font-xl5: 24px;
+    --font-xl6: 26px;
+    --font-xl7: 28px;
+    --font-xl8: 36px;
+  }
+}
+
+/* FONT FAMILY  */
+.ff-messapiaBold {
+  font-family: MessapiaBold !important;
+}
+
+/* color here */
+.color-primary-green {
+  color: var(--color-primary-green);
+}
+
+.color-green {
+  color: var(--color-green);
+}
+
+.color-light-green {
+  color: var(--color-light-green);
+}
+
+.color-white {
+  color: var(--color-white);
+}
+
+.color-grey {
+  color: var(--color-grey);
+}
+
+.color-grey-2 {
+  color: var(--color-grey-2);
+}
+
+.color-grey-3 {
+  color: var(--color-grey-3);
+}
+
+.color-grey-4 {
+  color: var(--color-grey-4);
+}
+
+.color-grey-5 {
+  color: var(--color-grey-5);
+}
+
+.color-grey-6 {
+  color: var(--color-grey-6);
+}
+
+.color-grey-7 {
+  color: var(--color-grey-7);
+}
+
+.color-primary-grey {
+  color: var(--color-primary-grey);
+}
+
+.color-organ {
+  color: var(--color-organ);
+}
+
+.color-primary-organ {
+  color: var(--color-primary-organ);
+}
+
+/* font size */
+.fs-xs {
+  font-size: var(--font-xs) !important;
+}
+
+.fs-sm {
+  font-size: var(--font-sm);
+}
+
+.fs-md {
+  font-size: var(--font-md);
+}
+
+.fs-xl {
+  font-size: var(--font-xl);
+}
+
+.fs-xl1 {
+  font-size: var(--font-xl1);
+}
+
+.fs-xl2 {
+  font-size: var(--font-xl2);
+}
+
+.fs-xl3 {
+  font-size: var(--font-xl3);
+}
+
+.fs-xl4 {
+  font-size: var(--font-xl4);
+}
+
+.fs-xl5 {
+  font-size: var(--font-xl5);
+}
+
+.fs-xl6 {
+  font-size: var(--font-xl6);
+}
+
+.fs-xl7 {
+  font-size: var(--font-xl7);
+}
+
+.fs-xl8 {
+  font-size: var(--font-xl8);
+}
+
+/* font weight here  */
+
+.fw-normal {
+  font-weight: normal;
+}
+
+.fw-light {
+  font-weight: 300;
+}
+
+.fw-medium {
+  font-weight: 500;
+}
+
+.fw-semi-bold {
+  font-weight: 600;
+}
+
+.fw-bold {
+  font-weight: 700 !important;
+}
+
+.fw-extra-bold {
+  font-weight: 800;
+}
+
+.main-header {
+  font-size: var(--font-xl8);
+  font-weight: 700;
+}
+
+.para {
+  font-weight: 700;
+  font-size: var(--font-md);
+}
+
+.para-2 {
+  font-weight: 400;
+  font-size: var(--font-md);
+}
+
+.small-para {
+  font-size: var(--font-sm);
+  font-weight: 400;
+}
+
+.small-para-2 {
+  font-size: var(--font-sm);
+  font-weight: 700;
+}
+
+.small-heading {
+  font-size: var(--font-xl1);
+  font-weight: 700;
+}
+
+.common-outline-button {
+  white-space: nowrap;
+  background-color: transparent;
+  border: 2px solid var(--color-green);
+  border-radius: 40px;
+  padding: 10px 16px;
+  outline: 0;
+  color: var(--color-green);
+  transition: all 0.3s ease-in;
+}
+
+.common-outline-button:hover {
+  transform: scale(1.05);
+  box-shadow: 3px 3px 3px var(--color-green);
+}
+
+.common-filltd-green-button {
+  white-space: nowrap;
+  background-color: var(--color-green);
+  border: 2px solid var(--color-green);
+  border-radius: 40px;
+  padding: 10px 16px;
+  outline: 0;
+  color: white;
+  transition: all 0.3s ease-in;
+}
+
+.common-filltd-green-button:hover {
+  color: var(--color-green);
+  background-color: transparent;
+}
+
+.common-filltd-grey-button {
+  white-space: nowrap;
+  background-color: #606c7c;
+  border: 2px solid #606c7c;
+  border-radius: 40px;
+  padding: 10px 16px;
+  outline: 0;
+  color: white;
+  transition: all 0.3s ease-in;
+}
+
+.common-filltd-grey-button:hover {
+  color: #606c7c;
+  background-color: transparent;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.outline-0 {
+  outline: 0;
+}
+
+@media (min-width: 1500px) {
+  .container-fluid {
+    max-width: 1400px;
+  }
+}

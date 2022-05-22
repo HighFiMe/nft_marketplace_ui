@@ -1,3 +1,350 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.bg-home-hero {
+  background-image: url("/images/axie-infinity-bg.png");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg-manage-assets {
+  background-image: url("/images/manage-assets-bg.png");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.search-wrapper-navbar-manage-assets {
+  max-width: 450px;
+  width: 100%;
+  height: 44px;
+  border: 1px solid #38495c;
+  border-radius: 1000px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 45px;
+  color: white;
+}
+
+.search-wrapper-navbar-manage-assets input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  color: #afb7bf;
+}
+
+.search-wrapper-navbar-manage-assets svg {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+}
+
+/* NAVBAR STYLES  */
+.search-wrapper-navbar {
+  width: 287px;
+  height: 44px;
+  border: 1px solid #38495c;
+  border-radius: 1000px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 45px;
+  color: white;
+}
+
+.search-wrapper-navbar input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  color: #afb7bf;
+}
+
+.search-wrapper-navbar svg {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+}
+
+.search-wrapper-navbar-in-modal {
+  width: 100%;
+  height: 44px;
+  border: 1px solid #38495c;
+  border-radius: 1000px;
+  background-color: #303435;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 45px;
+  color: white;
+}
+
+.search-wrapper-navbar-in-modal input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  color: #afb7bf;
+}
+
+.search-wrapper-navbar-in-modal svg {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+}
+
+.collection-dropdown .btn-primary {
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: unset !important;
+  padding: 0 !important;
+}
+.collection-dropdown .btn-primary:hover span {
+  color: var(--color-primary-green) !important;
+}
+.collection-dropdown .dropdown-toggle::after {
+  content: unset !important;
+}
+
+.collection-dropdown .dropdown-menu {
+  background-color: var(--color-grey-2);
+  color: white;
+}
+
+.collection-dropdown .dropdown-menu a {
+  color: black !important;
+}
+.collection-dropdown .dropdown-menu a:hover {
+  background-color: var(--color-green) !important;
+  color: white !important;
+}
+.collection-dropdown .dropdown-menu a:hover a {
+  background-color: var(--color-green) !important;
+  color: white !important;
+}
+
+.nav-list-item-hover li:hover {
+  color: var(--color-primary-green) !important;
+}
+
+.nav-social-icons {
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: 1px solid #38495c;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-social-icons:hover {
+  transform: translateY(-7px);
+}
+
+.nav-social-icons svg {
+  transition: 0.3s ease;
+}
+
+.nav-social-icons:hover path {
+  fill: var(--color-green);
+}
+
+.connect-wallet-icon {
+  transition: 0.3s ease;
+  border: 2px solid #43b45c;
+  background-color: #43b45c;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.connect-wallet-icon:hover {
+  background-color: transparent;
+}
+
+.connect-wallet-icon:hover svg {
+  transition: 0.3s ease;
+}
+.connect-wallet-icon:hover svg path {
+  fill: #43b45c;
+}
+
+/* SIDEBAR STYLE  */
+.main-sidebar-wrapper {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: #303435;
+  padding: 15px;
+  z-index: 100;
+  transition: all 0.4s ease-in;
+}
+
+/* HAMBURGER ICON STYLE  */
+#nav-icon1 {
+  width: 40px;
+  height: 35px;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  -webkit-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  transform: scale(0.7);
+}
+
+#nav-icon1 span {
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background: white;
+  border-radius: 7px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+#nav-icon1 span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon1 span:nth-child(2) {
+  top: 13px;
+}
+
+#nav-icon1 span:nth-child(3) {
+  top: 26px;
+}
+
+.active-nav-overlay #nav-icon1 {
+  z-index: 20;
+}
+
+.active-nav-overlay #nav-icon1 span:nth-child(1) {
+  top: 13px;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+.active-nav-overlay #nav-icon1 span {
+  background: white;
+}
+.active-nav-overlay #nav-icon1 span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.active-nav-overlay #nav-icon1 span:nth-child(3) {
+  top: 13px;
+  -webkit-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+/* MODAL STYLE NAV SEARCH  */
+
+.search-nav-modal .modal-content {
+  background-color: #afb7bf;
+}
+.search-nav-modal .modal-header {
+  border: 0;
+}
+.search-nav-modal .modal-footer {
+  border: 0;
+}
+
+/* MANAGES ASSETS STYLE  */
+
+.nft-card-item {
+  width: 100%;
+  height: 100%;
+  background: #2b3745;
+  border: 1px solid #38495c;
+  border-radius: 16px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.nft-card-item:hover {
+  box-shadow: 4px 4px 8px #38495c;
+  transform: translateY(-8px);
+}
+.nft-card-item-head {
+  border-radius: 16px 16px 0px 0px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-dark-orange {
+  background-color: var(--color-organ);
+}
+.bg-primary-orange {
+  background-color: var(--color-primary-organ);
+}
+.bg-light-green {
+  background-color: var(--color-light-green);
+}
+
+.color-dark-green {
+  color: #21592d;
+}
+
+.h-200 {
+  height: 200px;
+}
+
+.max-w-200 {
+  max-width: 200px;
+}
+
+.hero-carousel-wrapper img {
+  border-radius: 20px !important;
+}
+
+@media (max-width: 1399.98px) {
+  .search-wrapper-navbar {
+    width: 220px;
+  }
+}
+@media (max-width: 1199.98px) {
+  .main-sidebar-wrapper {
+    left: -300px;
+  }
+  .active-nav-overlay .main-sidebar-wrapper {
+    left: 0px;
+  }
+}
+
+@media (max-width: 361.98px) {
+  .main-sidebar-wrapper {
+    left: -260px;
+    width: 260px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .max-w-1440 {
+    max-width: 1440px;
+  }
+}
